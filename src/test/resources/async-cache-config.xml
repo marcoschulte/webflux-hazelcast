@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:hz="http://www.hazelcast.com/schema/spring"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.hazelcast.com/schema/spring
+        http://www.hazelcast.com/schema/spring/hazelcast-spring-5.4.xsd">
+
+    <hz:hazelcast id="instance">
+        <hz:config>
+            <hz:map name="values"/>
+            <hz:map name="lock-without-ttl"/>
+            <hz:map name="lock-with-ttl" time-to-live-seconds="1"/>
+        </hz:config>
+    </hz:hazelcast>
+
+</beans>
